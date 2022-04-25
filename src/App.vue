@@ -56,7 +56,7 @@ export default {
   methods: {
     getRandomCard(){
       this.curCard++;
-      return this.gameCards[this.curCard%this.gameCards.length];
+      return this.gameCards[Math.floor(Math.random()*this.gameCards.length)];
     },
     newCard(increment){
       // alert(this.progressBarPercentage);
@@ -87,7 +87,7 @@ export default {
       }
     },
     gameOver(){
-      alert('Next turn, pass to the newx team');
+      alert('Next turn, pass to the next team');
       this.points =  -1;
       this.curCard = -1;
       this.numSkips = 0;
